@@ -6,8 +6,11 @@ class Katarynka{
     private:
         bool korbka;
     public:
+        Katarynka(){
+            this->korbka = false;
+        }
         void krecKorbka(){
-            if(korbka == true){
+            if(this->korbka == true){
                 cout<<"Korbka juz sie kreci nie trzeba jej rozkrecac"<<endl;
             }else{
                 this->korbka = true;
@@ -15,7 +18,7 @@ class Katarynka{
             }
         }
         void zatrzymajKrecenie(){
-            if(korbka == false){
+            if(this->korbka == false){
                 cout<<"Korbka juz jest zatrzymana nie trzeba jej zatrzymywac"<<endl;
             }else{
                 this->korbka = false;
@@ -23,6 +26,8 @@ class Katarynka{
             }
         }
 };
+
+
 
 int main(int argc, char const *argv[])
 {
