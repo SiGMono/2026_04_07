@@ -2,6 +2,7 @@
 
 using namespace std;
 
+        //  Old and depreciated class to be used in the exercise to adapt
 class Katarynka{
     private:
         bool korbka;
@@ -27,7 +28,28 @@ class Katarynka{
         }
 };
 
+        //  INTERFACE
+class Odtwarzacz{
+    public:
+        virtual void odtwarzaj() = 0;
+        virtual void zatrzymaj() = 0;
+};
 
+        //  ADAPTER
+class KatarynkaAdapter: public Odtwarzacz{
+    private:
+        Katarynka *katarynka;
+    public:
+        KatarynkaAdapter(Katarynka *katarynka){
+            this->katarynka = katarynka;
+        }
+        void odtwarzaj(void) override{
+            this->katarynka->krecKorbka();
+        }
+        void zatrzymaj(void) override{
+            this->katarynka->zatrzymajKrecenie();
+        }
+};
 
 int main(int argc, char const *argv[])
 {
